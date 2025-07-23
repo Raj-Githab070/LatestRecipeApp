@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavor Magic - Recipe Assistant App</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Home Screen -->
+<div class="phone-container">
+<div class="screen active" id="home">
+<div class="status-bar">
+<span>9:41</span>
+<span>Flavor Magic</span>
+<span>🔋 89%</span>
+</div>
+
+```
+        <div class="header">
+            <h1>Flavor Magic</h1>
+            <p>What would you like to cook today?</p>
+        </div>
+
+        <div class="content">
+            <div class="quick-actions">
+                <div class="action-card" onclick="showScreen('ingredients')">
+                    <div class="icon">🥬</div>
+                    <h3>My Ingredients</h3>
+                    <p>Find recipes with what you have</p>
+                </div>
+
+                <div class="action-card" onclick="showScreen('filters')">
+                    <div class="icon">⚙️</div>
+                    <h3>Quick Filter</h3>
+                    <p>Set preferences & find recipes</p>
+                </div>
+
+                <div class="action-card" onclick="showScreen('occasions')">
+                    <div class="icon">🎉</div>
+                    <h3>Special Occasions</h3>
+                    <p>Recipes for celebrations</p>
+                </div>
+
+                <div class="action-card" onclick="showScreen('cuisine')">
+                    <div class="icon">🌍</div>
+                    <h3>Cuisine Types</h3>
+                    <p>Explore different cuisines</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Recent Searches</h2>
+                <div class="recipe-card">
+                    <h3>Vegetarian Pasta</h3>
+                    <div class="recipe-meta">
+                        <span>⏱️ 25 mins</span>
+                        <span>👥 4 people</span>
+                        <span>🥗 Vegetarian</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Dinner</span>
+                        <span class="tag">Italian</span>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <h3>Paneer Butter Masala</h3>
+                    <div class="recipe-meta">
+                        <span>⏱️ 35 mins</span>
+                        <span>👥 3 people</span>
+                        <span>🥗 Vegetarian</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Dinner</span>
+                        <span class="tag">North Indian</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <div style="font-size: 20px;">🏠</div>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <div style="font-size: 20px;">🔍</div>
+                <span>Search</span>
+            </div>
+            <div class="nav-item">
+                <div style="font-size: 20px;">❤️</div>
+                <span>Favorites</span>
+            </div>
+            <div class="nav-item">
+                <div style="font-size: 20px;">👤</div>
+                <span>Profile</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ingredients Screen -->
+    <div class="screen" id="ingredients">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Available Ingredients</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('home')">←</button>
+
+        <div class="header">
+            <h1>My Ingredients</h1>
+            <p>Tell us what you have at home</p>
+        </div>
+
+        <div class="content">
+            <div class="ingredient-input">
+                <h3 style="margin-bottom: 15px; color: #2d3748;">Available Ingredients</h3>
+                <textarea placeholder="Enter ingredients you have at home (e.g., tomatoes, onions, rice, chicken, paneer, spices...)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Quick Add</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <button class="ingredient-btn">🍅 Tomatoes</button>
+                    <button class="ingredient-btn">🧅 Onions</button>
+                    <button class="ingredient-btn">🍚 Rice</button>
+                    <button class="ingredient-btn">🥛 Milk</button>
+                    <button class="ingredient-btn">🧄 Garlic</button>
+                    <button class="ingredient-btn">🌶️ Spices</button>
+                </div>
+            </div>
+
+            <button class="primary-btn" onclick="showScreen('results')">Find Recipes</button>
+        </div>
+    </div>
+
+    <!-- Filters Screen -->
+    <div class="screen" id="filters">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Recipe Filters</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('home')">←</button>
+
+        <div class="header">
+            <h1>Recipe Preferences</h1>
+            <p>Customize your recipe search</p>
+        </div>
+
+        <div class="content">
+            <div class="filter-grid">
+                <div class="filter-card">
+                    <h3>Meal Type</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="meal" value="breakfast">
+                            <span>🌅 Breakfast</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="meal" value="lunch">
+                            <span>☀️ Lunch</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="meal" value="dinner">
+                            <span>🌙 Dinner</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="meal" value="snacks">
+                            <span>🍪 Snacks</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-card">
+                    <h3>Diet Type</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="diet" value="veg">
+                            <span>🥗 Vegetarian</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="diet" value="nonveg">
+                            <span>🍖 Non-Vegetarian</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="diet" value="mixed">
+                            <span>🍽️ Mixed</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="diet" value="vegan">
+                            <span>🌱 Vegan</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <h3>Number of People</h3>
+                <input type="range" min="1" max="10" value="4" class="slider" id="peopleSlider">
+                <div style="display: flex; justify-content: space-between; color: #718096; font-size: 14px; margin-top: 8px;">
+                    <span>1</span>
+                    <span id="peopleValue">4 people</span>
+                    <span>10+</span>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <h3>Cooking Time (minutes)</h3>
+                <input type="range" min="10" max="120" value="30" class="slider" id="timeSlider">
+                <div style="display: flex; justify-content: space-between; color: #718096; font-size: 14px; margin-top: 8px;">
+                    <span>10 min</span>
+                    <span id="timeValue">30 minutes</span>
+                    <span>2+ hrs</span>
+                </div>
+            </div>
+
+            <button class="primary-btn" onclick="showScreen('results')">Apply Filters & Search</button>
+        </div>
+    </div>
+
+    <!-- Occasions Screen -->
+    <div class="screen" id="occasions">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Special Occasions</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('home')">←</button>
+
+        <div class="header">
+            <h1>Special Occasions</h1>
+            <p>Find perfect recipes for celebrations</p>
+        </div>
+
+        <div class="content">
+            <div class="occasions-grid">
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">🎂</div>
+                    <div>Birthday Party</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">🪔</div>
+                    <div>Festival</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">👨‍👩‍👧‍👦</div>
+                    <div>Family Gathering</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">👥</div>
+                    <div>Friends Meetup</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">🎉</div>
+                    <div>Promotion</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">💑</div>
+                    <div>Anniversary</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">🏠</div>
+                    <div>Housewarming</div>
+                </div>
+
+                <div class="occasion-card" onclick="showScreen('results')">
+                    <div style="font-size: 30px; margin-bottom: 10px;">🎊</div>
+                    <div>Achievement</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cuisine Screen -->
+    <div class="screen" id="cuisine">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Cuisine Types</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('home')">←</button>
+
+        <div class="header">
+            <h1>Choose Cuisine</h1>
+            <p>Explore flavors from around the world</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Indian Regional</h2>
+                <div class="cuisine-grid">
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🌶️</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">North Indian</h3>
+                            <p style="color: #718096; font-size: 14px;">Punjabi, Rajasthani, Delhi</p>
+                        </div>
+                    </div>
+
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🥥</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">South Indian</h3>
+                            <p style="color: #718096; font-size: 14px;">Tamil, Telugu, Kerala, Karnataka</p>
+                        </div>
+                    </div>
+
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🐟</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">Maharashtrian</h3>
+                            <p style="color: #718096; font-size: 14px;">Mumbai, Pune, Kolhapur styles</p>
+                        </div>
+                    </div>
+
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🐡</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">Bengali</h3>
+                            <p style="color: #718096; font-size: 14px;">Fish, sweets, rice dishes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>International</h2>
+                <div class="cuisine-grid">
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🍝</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">Italian</h3>
+                            <p style="color: #718096; font-size: 14px;">Pasta, pizza, risotto</p>
+                        </div>
+                    </div>
+
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🥢</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">Chinese</h3>
+                            <p style="color: #718096; font-size: 14px;">Stir-fry, noodles, dumplings</p>
+                        </div>
+                    </div>
+
+                    <div class="cuisine-card" onclick="showScreen('results')">
+                        <div class="cuisine-icon">🌮</div>
+                        <div>
+                            <h3 style="color: #2d3748; margin-bottom: 5px;">Mexican</h3>
+                            <p style="color: #718096; font-size: 14px;">Tacos, burritos, enchiladas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div class="screen" id="results">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Recipe Results</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('home')">←</button>
+
+        <div class="header">
+            <h1>Recipe Suggestions</h1>
+            <p>Based on your preferences</p>
+        </div>
+
+        <div class="content">
+            <div class="recipe-card">
+                <h3>Vegetable Biryani</h3>
+                <div class="recipe-meta">
+                    <span>⏱️ 45 mins</span>
+                    <span>👥 6 people</span>
+                    <span>🥗 Vegetarian</span>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Lunch</span>
+                    <span class="tag">South Indian</span>
+                    <span class="tag">Family Gathering</span>
+                </div>
+                <p style="color: #718096; margin-top: 10px;">Aromatic rice dish with mixed vegetables, perfect for family occasions</p>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Butter Chicken</h3>
+                <div class="recipe-meta">
+                    <span>⏱️ 40 mins</span>
+                    <span>👥 4 people</span>
+                    <span>🍖 Non-Vegetarian</span>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Dinner</span>
+                    <span class="tag">North Indian</span>
+                    <span class="tag">Special</span>
+                </div>
+                <p style="color: #718096; margin-top: 10px;">Rich and creamy chicken curry with tomatoes and spices</p>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Masala Dosa</h3>
+                <div class="recipe-meta">
+                    <span>⏱️ 30 mins</span>
+                    <span>👥 3 people</span>
+                    <span>🥗 Vegetarian</span>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Breakfast</span>
+                    <span class="tag">South Indian</span>
+                    <span class="tag">Traditional</span>
+                </div>
+                <p style="color: #718096; margin-top: 10px;">Crispy crepe with spiced potato filling, served with chutney</p>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Rajma Chawal</h3>
+                <div class="recipe-meta">
+                    <span>⏱️ 35 mins</span>
+                    <span>👥 4 people</span>
+                    <span>🥗 Vegetarian</span>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Lunch</span>
+                    <span class="tag">North Indian</span>
+                    <span class="tag">Comfort Food</span>
+                </div>
+                <p style="color: #718096; margin-top: 10px;">Kidney bean curry with rice - a wholesome comfort meal</p>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Chocolate Cake</h3>
+                <div class="recipe-meta">
+                    <span>⏱️ 60 mins</span>
+                    <span>👥 8 people</span>
+                    <span>🍰 Dessert</span>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Birthday</span>
+                    <span class="tag">Celebration</span>
+                    <span class="tag">International</span>
+                </div>
+                <p style="color: #718096; margin-top: 10px;">Rich and moist chocolate cake perfect for birthday celebrations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Detail Screen -->
+    <div class="screen" id="recipe-detail">
+        <div class="status-bar">
+            <span>9:41</span>
+            <span>Recipe Details</span>
+            <span>🔋 89%</span>
+        </div>
+
+        <button class="back-btn" onclick="showScreen('results')">←</button>
+
+        <div class="header">
+            <h1>Spicy Paneer Tikka</h1>
+            <p>Perfect for celebrations!</p>
+        </div>
+
+        <div class="content">
+            <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 24px;">⏱️</div>
+                        <div style="font-size: 14px; color: #718096;">25 mins</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 24px;">👥</div>
+                        <div style="font-size: 14px; color: #718096;">4 people</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 24px;">🔥</div>
+                        <div style="font-size: 14px; color: #718096;">Medium</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 24px;">🥗</div>
+                        <div style="font-size: 14px; color: #718096;">Vegetarian</div>
+                    </div>
+                </div>
+
+                <div class="recipe-tags" style="justify-content: center;">
+                    <span class="tag">North Indian</span>
+                    <span class="tag">Birthday Special</span>
+                    <span class="tag">Appetizer</span>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <h3 style="color: #2d3748; margin-bottom: 15px;">Ingredients</h3>
+                <ul style="color: #4a5568; line-height: 1.6;">
+                    <li>• 400g Paneer (cubed)</li>
+                    <li>• 1 large Onion (cubed)</li>
+                    <li>• 1 Bell Pepper (cubed)</li>
+                    <li>• 2 tbsp Yogurt</li>
+                    <li>• 1 tbsp Ginger-Garlic paste</li>
+                    <li>• 1 tsp Red chili powder</li>
+                    <li>• 1 tsp Garam masala</li>
+                    <li>• 1/2 tsp Turmeric powder</li>
+                    <li>• Salt to taste</li>
+                    <li>• 2 tbsp Oil</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <h3 style="color: #2d3748; margin-bottom: 15px;">Instructions</h3>
+                <ol style="color: #4a5568; line-height: 1.8;">
+                    <li><strong>Marinate:</strong> Mix yogurt, ginger-garlic paste, and all spices. Marinate paneer for 15 minutes.</li>
+                    <li><strong>Prepare:</strong> Cut onions and bell peppers into cubes.</li>
+                    <li><strong>Skewer:</strong> Thread paneer, onions, and peppers on skewers alternately.</li>
+                    <li><strong>Cook:</strong> Heat oil in pan. Cook skewers for 2-3 minutes each side until golden.</li>
+                    <li><strong>Serve:</strong> Garnish with lemon juice and fresh coriander. Serve hot!</li>
+                </ol>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button style="flex: 1; background: #48bb78; color: white; border: none; border-radius: 12px; padding: 15px; font-weight: 600;">❤️ Save Recipe</button>
+                <button style="flex: 1; background: #667eea; color: white; border: none; border-radius: 12px; padding: 15px; font-weight: 600;">📝 Start Cooking</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navigation-controls">
+    <button class="nav-btn" onclick="showScreen('home')">Home</button>
+    <button class="nav-btn" onclick="showScreen('ingredients')">Ingredients</button>
+    <button class="nav-btn" onclick="showScreen('filters')">Filters</button>
+    <button class="nav-btn" onclick="showScreen('occasions')">Occasions</button>
+    <button class="nav-btn" onclick="showScreen('cuisine')">Cuisine</button>
+    <button class="nav-btn" onclick="showScreen('results')">Results</button>
+    <button class="nav-btn" onclick="showScreen('recipe-detail')">Recipe</button>
+</div>
+
+<script src="script.js"></script>
+
+```
+
+</body>
+</html>
